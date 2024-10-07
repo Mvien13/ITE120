@@ -127,6 +127,21 @@ li a:hover {
     padding: 30px 0;
 }
 
+/* Products Section */
+.products-section {
+    text-align: center; /* Center align the title */
+    padding: 20px; /* Add padding around the section */
+    margin: 40px 0; /* Add margin for spacing */
+    background-color: var(--lightgrey); /* Optional: background color */
+}
+
+.products-section h3 {
+    font-size: 28px; /* Increase font size for visibility */
+    color: var(--headers); /* Use a contrasting color for clarity */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+
 /* Product Container */
 .product-container {
     display: grid;
