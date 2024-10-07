@@ -55,8 +55,24 @@ body {
     display: none; /* Initially hidden */
 }
 
+#notification:target {
+    display: block; /* Show when targeted */
+}
+
+/* Additional Styles for Notification */
 .notification p {
     margin: 0; /* Remove default margin */
+}
+
+/* Animation for Notification */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#notification:target {
+    display: block; /* Show when targeted */
+    animation: fadeIn 0.5s ease-in; /* Fade in effect */
 }
 
 /* Animation for Notification */
