@@ -18,6 +18,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#membership">Membership</a></li>
             <li><a href="#contact">Contact Us</a></li>
+            <li><a href="cart.html">Cart</a></li>
         </ul>
     </div>
 
@@ -98,6 +99,28 @@
         </form>
         <div id="contactMessage" class="hidden">Thank you for your message!</div>
     </div>
+
+    <!-- JavaScript for Cart Functionality -->
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || []; // Retrieve existing cart from local storage or initialize empty
+
+        function addToCart(product, price) {
+            // Add the product to the cart array
+            cart.push({ product, price });
+
+            // Save the updated cart to local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Notify the user
+            document.querySelector('#notification p').innerText = `${product} has been added to your cart!`;
+            document.getElementById('notification').style.display = 'block';
+
+            // Hide the notification after 2 seconds
+            setTimeout(() => {
+                document.getElementById('notification').style.display = 'none';
+            }, 2000);
+        }
+    </script>
 
 
     <footer>
