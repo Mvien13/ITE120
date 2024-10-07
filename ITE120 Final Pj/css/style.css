@@ -290,29 +290,70 @@ footer p {
 }
 
 /* Media Queries */
-@media (max-width: 1050px) {
-    .product-container {
+@media(max-width:1050px){
+    h3{
+        margin: 0px 0px 0px 50px;
+        padding: 20px 0px;
+    }
+    .product-container{
         display: inline;
         gap: 10px;
         margin: auto;
     }
+    .card{
+        margin-bottom: 10px;
+    }
 }
 
-@media (max-width: 800px) {
-    .contact-form {
+@media(max-width:800px){
+    .contact-form{
         min-width: 500px;
     }
+    .contact-form h3{
+        font-size: 20px;
+        margin-right: 0px;
+    }
 }
 
-@media (max-width: 700px) {
-    h3 {
-        margin: 0 0 0 50px;
-        padding: 20px 0;
+@media(max-width:700px){
+    h3{
+        margin: 0px 0px 0px 50px;
+        padding: 20px 0px;
     }
-
-    .banner h1 {
+    .banner h1{
         font-size: 36px;
     }
 }
 
-@media (max-width: 600);
+@media(max-width:600px){
+    body{
+        background: url(../img/NMD-Black-600.png);
+        background-size: auto;
+        background-position: top;
+    }
+    .logo {
+        width: 75px;
+        display: block;
+        margin: auto;
+    }
+    li{
+        display: block;
+        margin: 1rem;
+    }
+    .banner h1{
+        margin-top: 100px;
+        font-size: 36px;
+    }
+    .contact-form{
+        min-width: 300px;
+    }
+    .about h2{
+        font-size: 24px;
+    }
+    .about p{
+        font-size: 18px;
+    }
+    footer p{
+        font-size: 12px;
+    }
+}
