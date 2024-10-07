@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Your Shopping Cart</title>
+</head>
+<body>
+
+    <!-- Cart Page Title -->
+    <div class="cart-banner">
+        <h1>Your Cart</h1>
+    </div>
+
+    <!-- Cart Items Section -->
+    <div class="cart-page">
+        <h3>Items in Your Cart</h3>
+        <ul id="cart-items">
+            <!-- Cart items will be dynamically displayed here -->
+        </ul>
+        <p id="total-price">Total: $0</p>
+        <button class="btn checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Sneaker Shop - Thank you for shopping with us!</p>
+    </footer>
+
+    <!-- JavaScript for Cart Functionality -->
+    <script>
+        // Retrieve the cart items from local storage
+        const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+        let total = storedCart.reduce((sum, item) => sum + item.price, 0); // Calculate total price
+
+        // Function to display the cart items on the page
+        function displayCart() {
+            const cartItems = document.getElementById('cart-items');
+            const totalPrice = document.getElementById('total-price');
+
+            // Clear the previous items
+            cartItems.innerHTML = '';
+
+            storedCart.forEach((item) => {
+                const li = document.createElement('li');
+                li.innerText = `${item.product} - $${item.price}`;
+                cartItems.appendChild(li);
+            });
+
+            // Update the total price
+            totalPrice.innerText = `Total: $${total}`;
+        }
+
+        // Function to handle checkout
+        function checkout() {
+            alert(`Thank you for your purchase! Your total is $${total}.`);
+            localStorage.clear(); // Clear the cart after checkout
+            window.location.href = "index.html"; // Redirect to homepage after checkout
+        }
+
+        // Display the cart on page load
+        displayCart();
+    </script>
+
+</body>
+</html>
