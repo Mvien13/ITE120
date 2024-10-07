@@ -31,9 +31,7 @@
         <h1>Great Shoes At Great Prices</h1>
     </div>
 
-    <div class="background-container">
-
-    <!-- Products -->
+    <!-- Products Section -->
     <h3 id="products">PRODUCTS</h3>
     <div class="product-container">
         <div class="card">
@@ -46,23 +44,29 @@
             <h4>Adidas Ultraboost</h4>
             <a href="#notification" class="btn add-to-cart" onclick="document.querySelector('#notification p').innerText='Adidas Ultraboost has been added to your cart!'">Add to Cart</a>
         </div>
-        </div>
         <div class="card">
             <div class="shoe-img product3"></div>
             <h4>Nike Air Max 97</h4>
-            <a href="#notification" class="btn add-to-cart" onclick="document.querySelector('#notification p').innerText='Adidas NMD has been added to your cart!'">Add to Cart</a>
+            <a href="#notification" class="btn add-to-cart" onclick="document.querySelector('#notification p').innerText='Nike Air Max 97 has been added to your cart!'">Add to Cart</a>
         </div>
         <div class="card">
             <div class="shoe-img product4"></div>
             <h4>Adidas NMD</h4>
-            <a href="#cart" class="btn add-to-cart">Add to Cart</a>
+            <a href="#notification" class="btn add-to-cart" onclick="document.querySelector('#notification p').innerText='Adidas NMD has been added to your cart!'">Add to Cart</a>
+        </div>
+        <div class="card">
+            <div class="shoe-img product5"></div>
+            <h4>Yeezy 350</h4>
+            <a href="#notification" class="btn add-to-cart" onclick="document.querySelector('#notification p').innerText='Yeezy 350 has been added to your cart!'">Add to Cart</a>
+        </div>
+        <div class="card">
+            <div class="shoe-img product6"></div>
+            <h4>Yeezy Boost 700</h4>
+            <a href="#notification" class="btn add-to-cart" onclick="document.querySelector('#notification p').innerText='Yeezy Boost 700 has been added to your cart!'">Add to Cart</a>
         </div>
     </div>
-    <div class="card">
-        <div class="shoe-img product5"></div>
-        <h4>Yeezy 350</h4>
-        <a href="#notification" class="btn add-to-cart" onclick="document.querySelector('#notification p').innerText='Yeezy 350 has been added to your cart!'">Add to Cart</a>
-    </div>
+
+    
 
     <!-- About Section -->
     <div id="about" class="about">
@@ -78,7 +82,7 @@
         <form>
             <input type="text" name="name" placeholder="Full Name" required>
             <input type="email" name="email" placeholder="Email Address" required>
-            <button class="btn submit-form" type="submit">Join Now</button>
+            <a href="#notification" class="btn submit-form" onclick="document.querySelector('#notification p').innerText='Thank you for joining our membership! We will get back to you soon.'"><br>Join Now</a>
         </form>
         <div id="membershipMessage" class="hidden">Thank you for joining our membership!</div>
     </div>
@@ -89,12 +93,12 @@
         <form action="/action_page.php" method="post">
             <input type="email" name="email" placeholder="name@email.com" required>
             <textarea id="message" name="text" placeholder="Enter Message here..." required></textarea>
-            <button class="btn submit-form" type="submit">Submit</button>
+            <a href="#notification" class="btn submit-form" onclick="document.querySelector('#notification p').innerText='Thank you for your message! We will get back to you soon.'">Submit</a>
         </form>
         <div id="contactMessage" class="hidden">Thank you for your message!</div>
     </div>
 
-    <!-- Footer -->
+
     <footer>
         <p>Sneaker Shop</p>
     </footer>
