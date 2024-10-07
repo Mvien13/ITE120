@@ -1,0 +1,315 @@
+/* CSS Variables */
+:root {
+    --headers: #202125;
+    --background: #4d4d4d;
+    --grey: #858585;
+    --lightgrey: #d2d2d2;
+    --shadow: 0 1px 5px rgba(0, 0, 0, 0.473);
+    --hover: 0 3px 10px rgba(0, 0, 0, 0.205);
+}
+
+body {
+    background-color: var(--background);
+    background: url(../img/NMD-Black-Cover.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: top;
+    background-origin: border-box;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Button Styles */
+.btn {
+    background-color: var(--lightgrey);
+    font-family: 'Roboto Mono', monospace;
+    color: black;
+    height: 40px; /* Increased height for better usability */
+    width: 100%; /* Full width for buttons */
+    border-radius: 5px;
+    border: none;
+    margin: 10px 0; /* Vertical margin for spacing */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.btn:hover {
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    background-color: var(--grey); /* Change background on hover */
+}
+/* Notification Styles */
+.notification {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 15px;
+    text-align: center;
+    position: fixed; /* Fixed position at the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it appears above other content */
+    display: none; /* Initially hidden */
+}
+
+#notification:target {
+    display: block; /* Show when targeted */
+}
+
+/* Additional Styles for Notification */
+.notification p {
+    margin: 0; /* Remove default margin */
+}
+
+/* Animation for Notification */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#notification:target {
+    display: block; /* Show when targeted */
+    animation: fadeIn 0.5s ease-in; /* Fade in effect */
+}
+
+
+/* Navigation Bar */
+.navbar {
+    text-align: center;
+    height: 80px;
+    color: #fff;
+}
+
+ul {
+    text-decoration: none;
+    color: #fff;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 1rem;
+}
+
+li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+li a:hover {
+    color: var(--grey);
+}
+
+/* Logo */
+.logo {
+    width: 100px; /* Adjusted width */
+    height: auto; /* Maintain aspect ratio */
+    display: inline-block;
+}
+
+/* Banner */
+.banner {
+    position: 0px;
+    min-height: 475px;
+    text-align: center;
+}
+
+.banner h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 42px;
+    font-weight: 300;
+    color: #fff;
+    padding: 30px 0;
+}
+
+/* Product Container */
+.product-container {
+    margin: 0 auto; /* Center the product container */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 20px;
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--grey);
+    min-height: 350px;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s; /* Smooth transform */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.card h4 {
+    margin: 20px 10px 15px 15px;
+}
+
+.product1{
+    background: url(../img/Airmax-90.jpg);
+    min-height: 250px;
+}
+
+.product2{
+    background: url(../img/Ultraboost.jpg);
+    min-height: 250px;
+}
+
+.product3{
+    background: url(../img/Airmax-97.jpg);
+    min-height: 250px;
+}
+
+.product4{
+    background: url(../img/NMD-R1.jpg);
+    min-height: 250px;
+}
+
+.product5{
+    background: url(../img/yeezy-350.webp);
+    min-height: 250px;
+}
+/* About Section */
+.about {
+    min-height: 200px;
+    margin: 50px 0;
+    padding: 25px 50px;
+    background-color: var(--lightgrey);
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 32px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.about p {
+    font-size: 20px;
+}
+
+/* Membership Section */
+.membership-form {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--lightgrey);
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: var(--shadow); /* Added shadow for depth */
+}
+
+.membership-form h3 {
+    margin-bottom: 10px;
+}
+
+.membership-form p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: var(--headers);
+}
+
+.membership-form input {
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+.membership-form input:focus {
+    border-color: var(--headers); /* Change border color on focus */
+}
+
+/* Contact Form */
+.contact-form {
+    margin: auto;
+    padding: 10px 50px;
+    min-width: 750px;
+    min-height: 325px;
+    box-sizing: border-box;
+    background-color: var(--lightgrey);
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: var(--shadow); /* Added shadow for depth */
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    color: var(--headers);
+    margin-left: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding: 10px; /* Added padding */
+    margin: 5px 0;
+    width: 100%;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--headers); /* Change border color on focus */
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: none; /* Disable resizing */
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    margin-top: 50px;
+    background-color: var(--grey);
+}
+
+footer p {
+    font-family: 'Roboto Mono', monospace;
+    color: var(--lightgrey);
+    font-size: 14px;
+    padding: 25px;
+}
+
+/* Media Queries */
+@media (max-width: 1050px) {
+    .product-container {
+        display: inline;
+        gap: 10px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 800px) {
+    .contact-form {
+        min-width: 500px;
+    }
+}
+
+@media (max-width: 700px) {
+    h3 {
+        margin: 0 0 0 50px;
+        padding: 20px 0;
+    }
+
+    .banner h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 600);
