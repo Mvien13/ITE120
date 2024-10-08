@@ -308,6 +308,10 @@ li a:hover {
     margin-bottom: 20px; /* Space below the title */
 }
 
+.cart-banner h1{
+    color: aliceblue;
+}
+
 /* Heading Styles */
 .cart-page h3 {
     font-size: 24px; /* Larger heading */
