@@ -31,38 +31,30 @@
 
     <!-- JavaScript for Cart Functionality -->
     <script>
-        // Retrieve the cart items from local storage
-        const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
-        let total = storedCart.reduce((sum, item) => sum + item.price, 0); // Calculate total price
+    let cart = JSON.parse(localStorage.getItem('cart')) || []; // Corrected 'let' syntax
 
-        // Function to display the cart items on the page
-        function displayCart() {
-            const cartItems = document.getElementById('cart-items');
-            const totalPrice = document.getElementById('total-price');
+    function displayCart() {
+        const cartItems = document.getElementById('cart-items');
+        const totalPrice = document.getElementById('total-price');
+        cartItems.innerHTML = ''; // Clear the previous items
+        let total = 0;
 
-            // Clear the previous items
-            cartItems.innerHTML = '';
+        cart.forEach((item, index) => {
+            total += item.price;
+            cartItems.innerHTML += `<li>${item.product} - $${item.price} <button onclick="removeItem(${index})">Remove</button></li>`;
+        });
 
-            storedCart.forEach((item) => {
-                const li = document.createElement('li');
-                li.innerText = `${item.product} - $${item.price}`;
-                cartItems.appendChild(li);
-            });
+        totalPrice.innerText = `Total: $${total}`;
+    }
 
-            // Update the total price
-            totalPrice.innerText = `Total: $${total}`;
-        }
+    function removeItem(index) {
+        cart.splice(index, 1); // Remove the item from the cart array
+        localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+        displayCart(); // Refresh the cart display
+    }
 
-        // Function to handle checkout
-        function checkout() {
-            alert(`Thank you for your purchase! Your total is $${total}.`);
-            localStorage.clear(); // Clear the cart after checkout
-            window.location.href = "index.html"; // Redirect to homepage after checkout
-        }
-
-        // Display the cart on page load
-        displayCart();
-    </script>
+    displayCart(); // Display the cart items on page load
+</script>
 
 </body>
 </html>
