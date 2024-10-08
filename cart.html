@@ -52,6 +52,17 @@
         localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
         displayCart(); // Refresh the cart display
     }
+    function checkout() {
+            if (cart.length > 0) {
+                // Show the total price and thank the user
+                alert(`Thank you for your purchase! Your total is $${cart.reduce((total, item) => total + item.price, 0)}.`);
+                cart = []; // Clear the cart
+                localStorage.removeItem('cart'); // Remove the cart data from localStorage
+                displayCart(); // Refresh the display to show an empty cart
+            } else {
+                alert("Your cart is empty! Please add items to the cart."); // Show alert if cart is empty
+            }
+     }
 
     displayCart(); // Display the cart items on page load
 </script>
