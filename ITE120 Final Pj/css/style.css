@@ -35,6 +35,11 @@ body {
     transition: all 0.3s ease; /* Smooth transition */
 }
 
+.add-to-cart {
+    margin-top: 10px; /* Space above the button */
+    font-weight: bold; /* Make the text bolder */
+}
+
 .btn:hover {
     box-shadow: var(--shadow);
     cursor: pointer;
