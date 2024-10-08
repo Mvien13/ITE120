@@ -292,7 +292,7 @@ li a:hover {
     resize: none; /* Disable resizing */
 }
 
-/* Center the cart page */
+/* Center the cart page container */
 .cart-page {
     max-width: 600px; /* Set a maximum width for the cart */
     margin: 50px auto; /* Center horizontally and add margin */
